@@ -12,14 +12,80 @@
     <h2>Working with Image</h2>
 
     <p>
-        Use <code>&lt;Img&gt;</code> to insert image in HTML document or webpage
+        Use <code>&lt;Img&gt;</code> to insert images in HTML document or webpage.
     </p>
 
-    <p><strong>Using Absolute file path</strong></p>
+    <h3>Use Absolute File Path for <code>src</code> attribute</h3>
+
+    <p>
+        <strong>Absolute file path</strong> is the exact location of the image on the webs. It start with the domain uri and path the image file.<br>
+        <strong>e.g:</strong> <code>http://domain.com/path-to-image/image-name.jpg</code>
+    </p>
+
+    <p><strong>Example</strong><br></p>
+
+    <p>
+
+        <code>&lt;img src="http://127.0.0.1:5500/images/image-720.jpg" alt=""&gt;</code>
+
+    </p>
 
     <img src="http://127.0.0.1:5500/images/image-720.jpg" alt="">
 
-    <p><strong>Absolute path with only external image</strong></p>
+    <h3>Insert External Image into HTML Document</h3>
+
+    <p>
+        Also, you can insert the external images from others' websites into your webpage using <code>&lt;img&gt;</code> tag. 
+        Mostly, it the purpose of using absolute file path.
+    </p>
+
+    <p>
+        <strong>e.g: </strong>
+        <code>http://greatisprogramming.com/wp-content/uploads/2020/02/HTML-1024x576.jpg</code><br>
+        <em>Thanks, <cite="greatisprogramming.com">greatisprogramming.com</cite> for providing the image for following example</em>
+    </p>
+
+    <p><strong>Example:</strong></p>
+
+
+    <pre>
+
+        <code>
+
+            &lt;p style="display: block; width: 380px;"&gt;
+
+                &lt;img 
+                
+                    src="http://greatisprogramming.com/wp-content/uploads/2020/02/HTML-1024x576.jpg"
+
+                    alt="HTML5 Late Night Image Cover"
+
+                    width="100%"
+
+                    height="auto"
+
+                &gt;
+
+            &lt;/p&gt;
+
+        </code>
+
+    </pre>
+
+    <p>
+        As displayed in the above code block, 
+        we use <code>src</code> attribute and absolute path to the external image from 
+        <code>greatisprogramming.com</code><br>
+        also, we used the <code>&lt;img&gt;</code> with additional three attributes:
+    </p>
+
+    <ul>
+        <li>Alternative attribute (<code>atl</code>) to display the aternative property if the property of <code>src</code> attribute is missing or incorrect</li>
+        <li><code>width</code> attribute to set the with of the current image to 100% of parent container(<code>&lt;p&gt;</code> tag)</li>
+        <li><code>height</code> attribute to set proper asect radio of the image dimention</li>
+    </ul>
+
+
 
     <p style="display: block; width: 380px;">
         <img 
@@ -30,8 +96,31 @@
     >
     </p>
 
-    <p><strong>Using relative path in image</strong></p>
-<!-- Using pixel width for image  -->
+    <h3>Use Relative for Image in HTML Document</h3>
+
+    <p>
+        Absolute file path is an accurate way to tell the HTML parser or browser regarding the correct locatoin of an image. <br>
+        However, we will find a bit difficult to manage images and resources in the HTML document using absolute. <br>
+        Think about change of your domain name, or move project from local host to live server. <br>
+        You will have to make sure you put the correct domain uri in every single page of your HTML documents.
+    </p>
+
+    <p>
+        It's the reason why the relative paths come up. You just tell the HTML parser or browser where to look for the image <br>
+        by related the image location to file base directory or root base directory
+    </p>
+
+    <p><strong>For example,</strong></p>
+
+    <p>  
+        <code>&lt;img src="images/image-720.jpg"&gt;</code>
+    </p>
+
+    <p>
+        The above code tells the HTML parser or browser to look for <code>image-720.jpg</code> in <code>images</code> directory where <br>
+        the current HTLM document <strong>(Episode 4 - Working with Media Contents.html)</strong> based in <strong>(root directory)</strong></p>
+
+    <!-- Using pixel width for image  -->
     <img 
     src="images/image-720.jpg" 
     alt="HTML5 Late Night Cover Image"
@@ -39,7 +128,80 @@
     width="720"
     >
 
-    <p><strong>Use multiple Images Sources</strong></p>
+    <h3>Use Multiple Image Sources for Responsive Image</h3>
+
+    <p>
+        Providing the correct image dimention and file size helps with improve better user experiences. <br>
+        It can save users' cost of downloading the large image file or provide the high quality image in big screen devices. <br>
+        What's more, it makes the website load faster as browser choose the correct image to be display.
+    </p>
+
+    <p>
+        To tell the browsers or HTML parser to use multiple image sources, you can use <code>srcset</code> attribute. <br>
+        Its property is the combination of image sources and descrptors separated by ( <kbd>,</kbd> ).
+    </p>
+
+    <p><strong>For Instance:</strong></p>
+
+    <pre>
+
+        <code>
+
+            &lt;img
+                src="images/image-720.jpg"
+                srcset="/images/image-720.jpg 720w,
+                        /images/image-480.jpg 480w,
+                        /images/image-375.jpg 375w"
+            &gt;
+
+        </code>
+
+    </pre>
+
+    <p>
+        The above code tells browsers that the image has multiple sources with different dimentions. <br>
+        The <code>w</code> behind the descriptors stand for <strong>pixel width</strong>
+    </p>
+
+    <p>
+        We told the browsers we have multiple image soruces, yet we didn't the browser when to use the sources.
+        You have to specify that in the <code>sizes</code> attribute.
+    </p>
+
+    <p>
+        The <code>sizes</code> attribute's property contains the combination of media query and pixel width.
+    </p>
+
+    <p><strong>For example:</strong></p>
+
+    <pre>
+        <code>
+            &lt;img
+
+                src="images/image-720.jpg"
+
+                srcset="/images/image-720.jpg 720w,
+                        /images/image-480.jpg 480w,
+                        /images/image-375.jpg 375w"
+
+                sizes="(min-width: 1200px) 720px,
+                (min-width: 768px) 480px,
+                (min-width: 375px) 375px,
+                100vw"
+            &gt;
+        </code>
+    </pre>
+
+    <p>The above code tells the HTML parser to do the follow works:</p>
+
+    <ol>
+        <li>Display 720 pixel width image when users access from any device that screen is larger than or equal to 1200 pixel width</li>
+        <li>Display 480 pixel width image when users access from any device that screen is larger than or equal to 768 pixel width</li>
+        <li>Display 375 pixel width image when users access from any device that screen is larger than or equal to 375 pixel width</li>
+        <li>Display image on available screen when access from any divice that screen is smaller than 375 pixel width </li>
+    </ol>
+
+    <p><strong>Example:</strong></p>
 
     <img 
     src="images/image-720.jpg" 
@@ -86,7 +248,6 @@
         <source srcset="/images/image-720.jpg" sizes="(min-width: 768px) 720px, 100vw">
         <img src="/images/image-720.jpg" alt="">
     </picture>
-
 
 </body>
 </html>
