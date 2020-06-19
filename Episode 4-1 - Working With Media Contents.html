@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Media Contents</title>
+</head>
+<body>
+    <video 
+        src="/videos/video.mp4"
+        width="720"
+        controls
+        muted
+        poster="/images/image-720.jpg"
+        loop
+        title="HTML tutorial for beginner"
+    >
+
+        <source src="/videos/video.webm" type="video/webm">
+        <source src="/videos/video.mp4" type="video/MP4">
+
+            <p>Your web browser did not support HTML5 player</p>
+
+            <track 
+            
+            kind="subtitles" 
+            src="/videos/track/subtitle.vtt"
+            lang="en" label="English"
+            > 
+
+            <track 
+            
+            kind="subtitles" 
+            src="/videos/track/subtitle.vtt"
+            lang="kh"
+
+            label="Khmer"
+            > 
+
+    </video>
+
+    <h2>Using audio</h2>
+
+    <audio src="/audios/audio.wav" controls muted loop title="How make write code">
+
+        <source src="/audios/audio.wav" type="audio/wav">
+
+    </audio>
+
+</body>
+</html>
