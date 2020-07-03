@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Embedded Contents</title>
+    <meta name="description" content="">
+</head>
+<body>
+
+    <h2>Use Embed tag</h2>
+    <embed 
+        src="/videos/video.mp4" 
+        type="video/mp4"
+    >
+
+    <p>
+        <embed 
+            src="/docs/pdf.pdf" 
+            type="application/PDF"
+            width="720"
+            height="480"
+            
+        >
+    </p>
+
+    <h2>Object embed</h2>
+
+    <object 
+        data="/docs/pdf.pdf" 
+        type="application/PDF"
+        width="720"
+        height="480"
+    >
+        <p>Your browser cannot load pdf plugin</p>
+    </object>
+
+    <h2>Ifram embed</h2>
+
+    <iframe 
+    
+        src="https://html.com/attributes/a-target/" 
+        frameborder="0"
+        loading="lazy"
+    >
+
+    </iframe>
+    <p>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/ODSqCVXJG7I" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            sandbox
+        >
+        </iframe>
+    </p>
+
+    <a href="/docs/pdf.pdf">veiw pdf</a>
+    
+</body>
+</html>
