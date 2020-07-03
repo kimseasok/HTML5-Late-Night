@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Form</title>
+</head>
+<body>
+    <h2>Payment Form</h2>
+
+    <form>
+        <section>
+
+            <h2>Personal Detail</h2>
+
+            <p>
+                <label for="first-name">Your first name:</label>
+                <input 
+                type="text" 
+                name="first_name" 
+                id="first-name"
+                placeholder="Your first name"
+                >
+            </p>
+
+            <p>
+                <label for="last-name">Your first name:</label>
+                <input 
+                type="text" 
+                name="last_name" 
+                id="last-name"
+                placeholder="Your last name">
+            </p>
+
+            <p>
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="phone">
+            </p>
+
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+            </p>
+
+            <address>
+                <p>
+                    <input type="text" name="address" id="">
+                </p>
+            </address>
+        </section>
+
+        <section>
+            <h3>Payment methods</h3>
+            <input type="number" name="visa_card" id="" placeholder="you card number" min="1" max="20" required>
+
+            <p>
+
+                <input type="month" name="expired_month" id="">
+
+            </p>
+
+        </section>
+
+        <section>
+            <h3>Regiester date</h3>
+
+            <p>
+                <label for="member-range">Range</label>
+                <input type="range" name="" id="" min="0" max="100">
+            </p>
+
+            <input type="datetime-local" name="" id="">
+
+            <input type="color" name="" id="">
+
+            <input type="url" name="" id="">
+        </section>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <input type="password" name="" id="">
+</body>
+</html>

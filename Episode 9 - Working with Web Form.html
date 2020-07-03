@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Form</title>
+</head>
+<body>
+    <h1>Working with Form in HTML5</h1>
+
+    <form>
+        <fieldset>
+            <legend>Use the bellow for contacting us</legend>
+
+            <p>
+                <input 
+                type="text" 
+                name="full_name" 
+                placeholder="Your Full Name"
+
+                minlength="5"
+                maxlength="50"
+                required
+                >
+            </p>
+
+            <p>
+
+                <input 
+                type="text" 
+                name="email" 
+                placeholder="Your email"
+                required
+                >
+
+            </p>
+
+            <p>
+                
+                <textarea name="" id="" cols="50" rows="10" required></textarea>
+
+            </p>
+
+            <p>
+
+                <input type="checkbox" name="issue[]" id="gm_issue" checked>
+                <label for="issue">General issue</label>
+    
+                <input type="checkbox" name="issue[]" id="custom_issue">
+               <label for="custom_issue">Customer Issue</label>
+
+            </p>
+
+
+            <input type="radio" name="option" id="option1_id" checked>
+            <label for="option1_id">Option 1</label>
+
+            <input type="radio" name="option" id="option2_id">
+            <label for="option2_id">Option 2</label>
+
+            <p>
+                <label for="file-upload">Attach Screenshot</label>
+                <input type="file" name="file_upload" id="file-upload" multiple>
+            </p>
+
+            <p>
+                <select name="dep_incharge" id="dep-incharge">
+                    <option value="customer service">Customer Service</option>
+                    <option value="Tech Support">Help Desktop</option>
+                    <option value="HR">HR Department</option>
+                </select>
+            </p>
+
+            <p>
+                <input type="hidden" name="token" value="0123456789">
+                <input type="submit" value="Send">
+            </p>
+
+        </fieldset>
+    </form>
+</body>
+</html>

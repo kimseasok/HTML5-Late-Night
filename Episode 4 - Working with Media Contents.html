@@ -11,11 +11,26 @@
 
     <h2>Working with Image</h2>
 
+    <nav>
+        <ul>
+            <li>
+                <a href="#absolute-path" rel="bookmark">Using Absolute Path</a>
+            </li>
+            <li>
+                <a href="#external-link">Using External Linking</a>
+            </li>
+
+            <li>
+                <a href="#relative-path">Using Relative Path</a>
+            </li>
+        </ul>
+    </nav>
+
     <p>
         Use <code>&lt;Img&gt;</code> to insert images in HTML document or webpage.
     </p>
 
-    <h3>Use Absolute File Path for <code>src</code> attribute</h3>
+    <h3 id="absolute-path">Use Absolute File Path for <code>src</code> attribute</h3>
 
     <p>
         <strong>Absolute file path</strong> is the exact location of the image on the webs. It start with the domain uri and path the image file.<br>
@@ -32,7 +47,7 @@
 
     <img src="http://127.0.0.1:5500/images/image-720.jpg" alt="">
 
-    <h3>Insert External Image into HTML Document</h3>
+    <h3 id="external-link">Insert External Image into HTML Document</h3>
 
     <p>
         Also, you can insert the external images from others' websites into your webpage using <code>&lt;img&gt;</code> tag. 
@@ -42,7 +57,13 @@
     <p>
         <strong>e.g: </strong>
         <code>http://greatisprogramming.com/wp-content/uploads/2020/02/HTML-1024x576.jpg</code><br>
-        <em>Thanks, <cite="greatisprogramming.com">greatisprogramming.com</cite> for providing the image for following example</em>
+        <em>Thanks, <a 
+            href="http://greatisprogramming.com/wp-content/uploads/2020/02/HTML-1024x576.jpg"
+            target="_blank"
+            rel="noreffer noopener nofollow"
+            >
+            <cite="greatisprogramming.com">greatisprogramming.com</cite>
+        </a> for providing the image for following example</em>
     </p>
 
     <p><strong>Example:</strong></p>
@@ -96,7 +117,7 @@
     >
     </p>
 
-    <h3>Use Relative for Image in HTML Document</h3>
+    <h3 id="relative-path">Use Relative for Image in HTML Document</h3>
 
     <p>
         Absolute file path is an accurate way to tell the HTML parser or browser regarding the correct locatoin of an image. <br>
@@ -216,9 +237,15 @@
     (min-width: 375px) 375px, 100vw"
     >
 
-    <p><strong>Use Figcaption</strong></p>
+    <h3>Using Figure and Figcaption</h3>
 
-    <figure>
+    <p>
+        You can put subtitle or caption of your image using <code>figure</code> and <code>figcaption</code>. <br>
+
+        First off, wrap your image with <code>&lt;figure&gt;</code> tag then put <code>&lt;figcaption&gt;</code> tag right bellow the <code>&lt;img&gt;</code>
+    </p>
+
+    <figure style="max-width: 720px;">
         <img 
         src="images/image-720.jpg" 
         alt="HTML5 Late Night Cover Image"
@@ -229,7 +256,14 @@
         </figcaption>
     </figure>
 
-    <strong>Use art dimention</strong>
+    <h3>Use Art Dimention with HTML5 tag (<code>&lt;picture&gt;</code>)</h3>
+
+    <p>
+        <b>You can provide multiple image dimention using HTML5 
+            <code>&lt;picture&gt;</code></b>. Start with <code>&lt;picture&gt; tag block and 
+        <code>&lt;source&gt;</code></code> tags inside the block. <br>
+        The <code>&lt;picture&gt;</code> require an <code>&lt;img&gt;</code> right bellow the last <code>&lt;source&gt;</code>
+    </p>
 
     <picture>
         <source media="(max-width: 768px)" srcset="/images/art-dimention-portrait.jpg">
@@ -241,11 +275,11 @@
         >
     </picture>
 
-    <p><strong>Support New technology image</strong></p>
+    <h3>Provide Support for New Image Technology</h3>
 
     <picture>
-        <source srcset="/images/webp/image-720.webp" sizes="(min-width: 768px) 720px, 100vw">
-        <source srcset="/images/image-720.jpg" sizes="(min-width: 768px) 720px, 100vw">
+        <source srcset="/images/webp/image-720.webp" sizes="(min-width: 768px) 720px, 100vw" type="image/webp">
+        <source srcset="/images/image-720.jpg" sizes="(min-width: 768px) 720px, 100vw" type="image/jpg">
         <img src="/images/image-720.jpg" alt="">
     </picture>
 
