@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML5 Late Night</title>
+
+    <meta name="description" content="The HTML5 tutorial for beginner developers who want to start web develment career">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- social media optimizing -->
+
+    <style>
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #73645C;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        a,
+        li {
+            padding: auto;
+            margin: auto;
+        }
+
+        /* 
+         * font
+         * Layout
+         */
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+        }
+
+        h2 {
+            font-size: 3em;
+        }
+
+        h3 {
+            font-size: 2em;
+        }
+
+        p,
+        a,
+        li,
+        button,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            font-family: "Open Sans", Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        p,
+        li {
+            color: #0f0d0d;
+        }
+
+        a {
+            color: #A67232;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: #BF913B;
+            transition: ease .5s;
+        }
+
+        a:visited {
+
+            color: #F2C46D;
+        }
+
+        button {
+            border: none;
+            background-color: #A67232;
+            color: #FFFFFF;
+            padding: .5em 1.5em;
+            margin-top: 1em;
+        }
+
+        button:hover {
+            background-color: #BF913B;
+            transition: ease .5s;
+            cursor: pointer;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            outline: none;
+            border: 1px solid #A67232;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            padding: .5em;
+            width: 98%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 15em;
+        }
+
+        #page {
+
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+        }
+
+        #brand-logo {
+            padding-left: 1.5em;
+        }
+
+        #brand-logo h1 {
+            font-size: 2em;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+
+        nav li {
+            list-style: none;
+            display: inline-block;
+            padding: .5em 1.5em;
+        }
+
+        #home{
+            display: flex;
+            align-items: center;
+        }
+
+        #site-headline {
+            position: absolute;
+            padding-left: 1.5em;
+        }
+
+        #site-headline h2,
+        #site-headline p{
+            color: #FFFFFF;
+            line-height: 1;
+        }
+
+        #site-headline h2 {
+            font-size: 4.5em;
+        }
+
+        #headline-large {
+
+            font-size: 1.2em;
+            letter-spacing: 4px;
+        }
+
+        #site-headline p {
+            font-size: 1.2em;
+        }
+
+        #hero-banner img{
+            width: 100%;
+        }
+
+        .container {
+            padding: 2em;
+        }
+
+        .sub-title {
+            font-size: 1.2em;
+            width: 80%;
+            text-align: center;
+        }
+
+        #services h2,
+        #portfolios h2,
+        #testimonails h2,
+        #get-intouch h2 {
+            text-align: center;
+        }
+
+        #services .container {
+            padding-bottom: 0;
+        }
+
+        #services-wraper,
+        #portfolio-wraper {
+            display: flex;
+            margin-top: 2em;
+        }
+
+        #services-wraper aside {
+            text-align: center;
+            padding: .5em;
+        }
+
+        #portfolio-wraper aside{
+            display: block;
+            width: 25%;
+            position: relative;
+        }
+
+        .portfolio-heading {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .portfolio-heading h3,
+        .portfolio-heading p {
+            color: #FFFFFF;
+            text-align: center;
+            margin: .1em;
+        }
+
+        .portfolio-heading h3 {
+            font-size: 1em;
+        }
+
+        #portfolio-wraper img {
+            width: 100%;
+        }
+
+        #testimonails .container {
+            padding-bottom: .5em;
+        }
+
+        #testimonials-wraper {
+            display: flex;
+            margin-top: 2em;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #testimonials-wraper aside {
+            display: block;
+            width: 50%;
+            margin-top: 1.5em;
+        }
+
+        .testimonial-profiles{
+            width: 8em;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            overflow: hidden;
+        }
+
+        .clients div {
+
+            display: block;
+            float: left;
+
+        }
+
+        .testimonial-entry {
+            max-width: 74%;
+            padding-left: 1em;
+        }
+
+        .testimonial-entry h3 {
+            font-size: 1.5em;
+        }
+
+        .testimonial-profiles img {
+            width: 100%;
+        }
+
+        #contact-method {
+            display: flex;
+            margin-top: 2em;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #contact-method address,
+        #contact-method form {
+            display: block;
+            width: 50%;
+        }
+
+        #contact-method h3 {
+            font-style: normal;
+        }
+
+        #contact-method ul {
+            padding-left: 0;
+        }
+
+        #contact-method li {
+            list-style: none;
+            padding: .5em 0;
+        }
+
+        #footer-widget {
+
+            display: flex;
+            background-color: #A67232;
+        }
+
+        #footer-widget aside {
+            display: block;
+            width: 25%;
+            padding: 0 .5em;
+        }
+
+        #copyright {
+            background-color:#463F39;
+        }
+
+        #footer-widget h3,
+        #footer-widget li,
+        #copyright p {
+            color: #FFFFFF;
+        }
+
+        #footer-widget ul {
+            padding-left: 0;
+
+        }
+
+        #footer-widget li {
+            list-style: none;
+        }
+
+        #copyright.container {
+
+            padding: 1em 2em;
+        }
+
+
+
+
+/* Color Theme Swatches in Hex */
+.color-theme_hero-banner-1-hex { color: #463F39; }
+.color-theme_hero-banner-2-hex { color: #BF913B; }
+.color-theme_hero-banner-3-hex { color: #F2C46D; }
+.color-theme_hero-banner-4-hex { color: #A67232; }
+.color-theme_hero-banner-5-hex { color: #73645C; }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="page">
+
+        <header>
+            <div id="brand-logo">
+                <h1>Kim WebDev</h2>
+            </div>
+            <nav id="primary-nav" role="navigation">
+    
+                <ul>
+                    <li class="nav-items">
+                        <a href="#home">Home</a>
+                    </li>
+    
+                    <li class="nav-items">
+                        <a href="#services">Services</a>
+                    </li>
+    
+                    <li class="nav-items">
+                        <a href="#portfolios">Portfolios</a>
+                    </li>
+    
+                    <li class="nav-items">
+                        <a href="#testimonials">Testimonials</a>
+                    </li>
+    
+                    <li class="nav-items">
+                        <a href="#get-intouch">Get Intouch</a>
+                    </li>
+    
+                </ul>
+    
+            </nav>
+    
+        </header>
+    
+        <main>
+            
+            <section id="home">
+
+                <div id="site-headline" class="container">
+    
+                    <h2 id="site-message"><span id="headline-large">Me building you</span><br>a reached purposes website</h2>
+    
+                    <p id="site-tagline">No only make your website <strong>I Kiss U</strong>, but also make it convertable.</p>
+    
+                </div>
+    
+                <div id="hero-banner">
+    
+                    <img src="/images/hero-banner.jpg" alt="">
+    
+                </div>
+    
+            </section>
+    
+            <section id="services">
+
+                <div class="container">
+
+                    <h2>Web and App Development Services</h2>
+                    <p class="sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        
+                    <div id="services-wraper">
+        
+                        <aside id="web-development" class="services">
+    
+                            <h3>Web Development</h3>
+    
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    
+                            <button>Learn More</button>
+    
+                        </aside>
+    
+                        <aside id="app-development" class="services">
+    
+                            <h3>App Development</h3>
+    
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    
+                            <button>Learn More</button>
+    
+                        </aside>
+    
+                        <aside id="seo-marketing" class="services">
+    
+                            <h3>SEO Marketing</h3>
+    
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    
+                            <button>Learn More</button>
+    
+                        </aside>
+        
+                    </div>
+
+                </div>
+    
+            </section>
+    
+            <section id="portfolios">
+
+                <div class="container">
+
+                    <h2>Our Works</h2>
+                    <p class="sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+                </div>
+
+                <div id="portfolio-wraper">
+        
+                    <aside>
+
+                        <div class="portfolio-heading">
+
+                            <h3>Fitness App for tracking exercise</h3>
+                            <p class="portfolio-desc">the feature for tracking jocking and biking</p>
+
+                        </div>
+                            
+                        <img src="/images/portfolios/app1.png" alt="" width="380">
+    
+                    </aside>
+    
+                    <aside>
+
+                        <div class="portfolio-heading">
+
+                            <h3>Foot and Resturaunt Website Development</h3>
+                            <p class="portfolio-desc">the feature for tracking jocking and biking</p>
+
+                        </div>
+       
+                        <img src="/images/portfolios/web1.png" alt="">
+                           
+                    </aside>
+    
+                    <aside>
+
+                        <div class="portfolio-heading">
+
+                            <h3>Fitness App for tracking exercise</h3>
+                            <p class="portfolio-desc">the feature for tracking jocking and biking</p>
+
+                        </div>
+    
+                        <img src="/images/portfolios/web3.png" alt="" width="380">
+    
+                    </aside>
+    
+                    <aside>
+
+                        <div class="portfolio-heading">
+
+                            <h3>Fitness App for tracking exercise</h3>
+                            <p class="portfolio-desc">the feature for tracking jocking and biking</p>
+
+                        </div>
+    
+                        <img src="/images/portfolios/app2.png" alt="" width="380">
+    
+                    </aside>
+    
+                </div>
+    
+            </section>
+    
+            <section id="testimonails">
+
+                <div class="container">
+
+                    <h2>What Our Clients Said</h2>
+    
+                    <p class="sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        
+                    <div id="testimonials-wraper">
+        
+                        <aside class="clients">
+        
+                            <div class="testimonial-profiles">
+        
+                                <img src="/images/clients/client1.jpg" alt="">
+        
+                            </div>
+    
+                            <div class="testimonial-entry">
+    
+                                <h3 class="client-names">Ethel K. Tatro</h3>
+    
+                                <p class="client-speak">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    
+                            </div>
+        
+        
+                        </aside>
+    
+                        <aside class="clients">
+        
+                            <div class="testimonial-profiles">
+        
+                                <img src="/images/clients/client2.jpg" alt="">
+        
+                            </div>
+    
+                            <div class="testimonial-entry">
+    
+                                <h3 class="client-names">Ethel K. Tatro</h3>
+    
+                                <p class="client-speak">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    
+                            </div>
+        
+        
+                        </aside>
+    
+                        <aside class="clients">
+        
+                            <div class="testimonial-profiles">
+        
+                                <img src="/images/clients/client3.jpg" alt="">
+        
+                            </div>
+    
+                            <div class="testimonial-entry">
+    
+                                <h3 class="client-names">Ethel K. Tatro</h3>
+    
+                                <p class="client-speak">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    
+                            </div>
+        
+        
+                        </aside>
+
+                        <aside class="clients">
+        
+                            <div class="testimonial-profiles">
+        
+                                <img src="/images/clients/client4.jpg" alt="">
+        
+                            </div>
+    
+                            <div class="testimonial-entry">
+    
+                                <h3 class="client-names">Ethel K. Tatro</h3>
+    
+                                <p class="client-speak">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    
+                            </div>
+        
+        
+                        </aside>
+        
+                    </div>
+
+                </div>
+    
+            </section>
+    
+            <section id="get-intouch">
+
+                <div class="container">
+
+                    <h2>Get Intouch</h2>
+                    <p class="sub-title">Thanks for getting intouch with us! You can use any of the following contact to reach out team</p>
+        
+                    <div id="contact-method">
+        
+                        <address>
+                            <h3>Contact Address</h3>
+                            <ul>
+                                <li>House #384, National High Way #6, Preah Ponlia, </li>
+                                <li>Sereisophon, Banteay Meanchey, Cambodia</li>
+                                <li>01254</li>
+                            </ul>
+            
+                            <ul>
+                                <li>+855-12-000-000</li>
+                                <li>basicblogtalk@gmail.com</li>
+                            </ul>
+            
+                        </address>
+            
+                        <form>
+        
+                            <h3>Contact form</h3>
+        
+                            <ul>
+                                <li>
+        
+                                    <label for="name">Your name</label>
+                                    <input type="text" name="name" id="name" placeholder="Your full name">
+        
+                                </li>
+        
+                                <li>
+                                    <label for="email">Your email</label>
+                                    <input type="text" name="email" id="email" placeholder="Your email">
+        
+                                </li>
+        
+                                <li>
+        
+                                    <label for="phone">Your phone</label>
+                                    <input type="tel" name="phone" id="phone" placeholder="Your phone">
+        
+                                </li>
+    
+    
+                                <li>
+        
+                                    <label for="subject">Your phone</label>
+                                    <input type="text" name="subject" id="subject" placeholder="Your subject">
+        
+                                </li>
+        
+                                <li>
+                                    
+                                    <label for="message">Your message</label>
+                                    <textarea name="message" id="message"></textarea>
+        
+                                </li>
+    
+                                <li>
+                                    <span>Service related</span><br>
+    
+                                    <span>
+                                        
+                                        <input type="checkbox" name="web_development" id="web-development">
+                                        
+                                        <label for="web-development">Web development</label>
+    
+                                    </span>
+    
+                                    <span>
+                                        
+                                        <input type="checkbox" name="app_development" id="app-development">
+    
+                                        <label for="app-development">Web development</label>
+    
+                                    </span>
+    
+                                    <span>
+                                        
+                                        <input type="checkbox" name="seo_marketing" id="seo-marketing">
+    
+                                        <label for="seo-marketing">SEO Marketing</label>
+    
+                                    </span>
+    
+                                </li>
+    
+                                <li>
+                                    <span>Request for</span>
+    
+                                    <span>
+                                        <input type="radio" name="request_info" id="query">
+                                        <label for="general-query">Query</label>
+                                    </span>
+    
+                                    <span>
+                                        <input type="radio" name="request_info" id="query">
+                                        <label for="general-query">Quote</label>
+                                    </span>
+    
+                                </li>
+        
+                            </ul>
+            
+                        </form>
+        
+                    </div>
+
+                </div>
+    
+            </section>
+    
+        </main>
+    
+        <footer>
+
+            <div id="footer-widget" class="container">
+
+                <aside>
+    
+                    <h3>Company</h3>
+    
+                    <ul>
+                        <li>About</li>
+                        <li>Contact</li>
+                        <li>Guidelines</li>
+                        <li>Privacy</li>
+                    </ul>
+    
+                </aside>
+    
+                <aside>
+    
+                    <h3>Services</h3>
+    
+                    <ul>
+                        <li>Website Development</li>
+                        <li>App Development</li>
+                        <li>SEO Marketing</li>
+                        <li>Web Manager</li>
+                    </ul>
+    
+                </aside>
+    
+                <aside>
+    
+                    <h3>News</h3>
+    
+                    <ul>
+                        <li>Why Your Business Needs A Website</li>
+                        <li>Case Study: High Conversion Website Increased 15% Sale</li>
+                        <li>Enhance Website Performance Increase 25% Conversion</li>
+                        <li>Whatever You Can Promote Your Business</li>
+                    </ul>
+    
+                </aside>
+    
+                <aside>
+    
+                    <h3>Follow us</h3>
+    
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>YouTube</li>
+                        <li>Instagram</li>
+                    </ul>
+    
+                </aside>
+
+            </div>
+
+            <div id="copyright" class="container">
+
+                <p>&copy;2020 Kimdev</p>
+
+            </div>
+
+        </footer>
+
+    </div> <!--#page-->
+
+</body>
+
+</html>
